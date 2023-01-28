@@ -8,5 +8,3 @@ with open("data\city.txt", encoding="utf-8") as russianCities:
                     line1 = (''.join(line))
                     print(line1)
 russianCities.close
-                
-
