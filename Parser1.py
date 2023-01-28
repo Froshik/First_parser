@@ -1,10 +1,15 @@
+import json
+
+
 #"assets\city.txt"
 ask = input("")
-with open("data\city.txt", encoding="utf-8") as russianCities:
-        for line in russianCities:
-            if line != False:
-                search = line.find(ask)
-                if search > 0:
-                    line1 = (''.join(line))
-                    print(line1)
+with open("data\db.json", encoding="utf-8") as russianCities:
+    data = russianCities.read()
+    json_data = json.loads(data)
+for line in json_data:
+    lineAsStr = str(line)
+    search = lineAsStr.find(ask)
+    if search > 0:
+        answer = line
+        print(line)
 russianCities.close
